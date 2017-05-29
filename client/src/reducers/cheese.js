@@ -12,6 +12,24 @@ export default (state=initialState, action) => {
     state = Object.assign({}, initialState, {
       loading: true
     });
+    return state;
+  }
+  if(action.type === FETCH_CHEESES_SUCCESS) {
+    state = Object.assign({}, initialState, {
+      loading: false,
+      error: null,
+      //cheese array should contain the requested cheeses
+      //cheeses: []
+    });
+    return state;
+  }
+  if(action.type === FETCH_CHEESES_ERROR) {
+    state = Object.assign({}, initialState, {
+      loading: false,
+      //error should contain the error message from fetchCheesesError(error)
+      //error: error
+    });
+    return state;
   }
   return state;
 }; 
