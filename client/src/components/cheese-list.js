@@ -1,6 +1,11 @@
 import React from 'react';
 
-export function CheeseList(props) {
+export class CheeseList extends React.Component {
+    constructor(props){
+        super(props);
+
+        this.props.dispatch(fetchCheeses());
+    }
     return(
        <ul>
            <li>Cheese 1</li>
